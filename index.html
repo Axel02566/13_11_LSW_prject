@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Iterativo de Cursos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topo">
+        <div class="container">
+            <p class="identificador">Linguagens de Script para a Web</p>
+            <h1 id="titulo_principal">Painel Interativo de Cursos</h1>
+            <p id="subtitulo">
+                Explore os Cursos e conheça suas principais caracteristicas.
+            </p>
+            <button id="btn_tema" class="botao botao_secundario" type="button">Alternar destaque</button>
+        </div>
+    </header>
+    <main class="container">
+        <section class="painel_filtros">
+            <div class="campo">
+                <label for="campo_busca">Buscar Curso</label>
+                <input id="campo_busca" type="search" placeholder="Digite o nome do Curso...">
+            </div>
+            <div class="campo">
+                <label for="filtro_area">Filtrar por área</label>
+                <select id="filtro_area">
+                    <option value="todos">Todas as áreas</option>
+                    <option value="programacao">Programação</option>
+                    <option value="infraestrutura">Infraestrutura</option>
+                    <option value="design">Design</option>
+                </select>
+            </div>
+            <button id="btn_limpar" class="botao" type="button">Limpar filtros</button>
+        </section>
+
+        <p id="mensagem" class="mensagem" role="status">Explore os cursos disponíveis</p>
+
+        <section id="lista_cursos" class="grade_cursos" aria-label="">
+
+            <article class="card_curso" data-area="programacao">
+                <h2>JavaScript para Web</h2>
+                <p class="descricao">Fundamentos da programação para páginas web.</p>
+                <button class="botao botao_principal" type="button" data-acao="detalhes ocultos">Ver detalhes</button>
+                <p class="detalhes oculto">Variáveis, funções, DOM e eventos.</p>
+                <button class="botao botao_perigo" type="button" data-acao="remover">Remover</button>
+            </article>
+
+            <article class="card_curso" data-area="infraestrutura">
+                <h2>Montagem e Manutenção</h2>
+                <p class="descricao">Fundamentos de montagem e manutenção de Hardware</p>
+                <button class="botao botao_principal" type="button" data-acao="detalhes ocultos">Ver detalhes</button>
+                <p class="detalhes oculto">Hardware, manutenção preventiva e corretiva</p>
+                <button class="botao botao_perigo" type="button" data-acao="remover">Remover</button>
+            </article>
+
+            <article class="card_curso" data-area="design">
+                <h2>Design de Interfaces</h2>
+                <p class="descricao">Curso sobre fundamentos de design</p>
+                <button class="botao botao_principal" type="button" data-acao="detalhes ocultos">Ver detalhes</button>
+                <p class="detalhes oculto">Hierarquia visual, cores, prototipação</p>
+                <button class="botao botao_perigo" type="button" data-acao="remover">Remover</button>
+            </article>
+        </section>
+
+        <section class="painel_cadastro">
+            <h2>Adicionar Curso</h2>
+            <form id="form_cadastro">
+                <div class="campo">
+                    <label for="nome_curso">Nome do Curso</label>
+                    <input id="nome_curso" type="text" placeholder="Ex.: Python"required>
+                </div>
+                <div class="campo">
+                    <label for="area_curso">Área</label>
+                    <select id="area_curso" name="area" required>
+                        <option value="">Selecione uma área</option>
+                        <option value="programacao">Programação</option>
+                        <option value="infraestrutura">Infraestrutura</option>
+                        <option value="design">Design</option>
+                    </select>
+                </div>
+                <button class="botao botao_principal" type="submit">Adicionar curso</button>
+            </form>
+        </section>    
+    </main>
+    <footer class="rodape"><p>Projeto didático - JavaScript e DOM</p></footer>
+</body>
+</html>
